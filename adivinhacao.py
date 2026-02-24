@@ -4,17 +4,19 @@ print ("**********************")
 print ("***jogo adivinhação***")
 print ("**********************")
 
-numero_secreto = random.randint(1,100)
+numero_secreto = random.randrange(1,101)
 total_tentativas = 5
-rodada = 1
 
-while (rodada <= total_tentativas):
+for rodada in range (1, total_tentativas +1 ):
+    print("Tentativa {} de {}".format(rodada, total_tentativas))
 
 
     chute_str = input("Digite o seu numero: ")
-    print("Seu numero é: ", chute_str)
-    
     chute = int(chute_str)
+
+    if(chute <1 or chute > 100):
+        print("O número deve ser entre 1 e 100")
+        continue
 
     acertou = chute == numero_secreto
     maior = chute > numero_secreto
@@ -25,9 +27,9 @@ while (rodada <= total_tentativas):
         break
     else:
         if(maior):
-            print("O seu chute foi maior que o número seceto")
+            print("Diminui")
         elif(menor):
-            print("O seu chute foi menor que o número seceto")
+            print("Aumenta")
     rodada = rodada +1
 
 print(numero_secreto)
