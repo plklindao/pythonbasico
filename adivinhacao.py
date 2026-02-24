@@ -6,8 +6,9 @@ print ("**********************")
 
 numero_secreto = random.randrange(1,101)
 total_tentativas = 5
+rodada = 1
 
-for rodada in range (1, total_tentativas +1 ):
+while (rodada <= total_tentativas ):
     print("Tentativa {} de {}".format(rodada, total_tentativas))
 
 
